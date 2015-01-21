@@ -17,7 +17,25 @@ class Test(unittest.TestCase):
         self.assertEqual(res.validateTimeInterval(), -1)
         
     def testValidateBigInterval(self):
-        pass
+        res = Reservacion()
+        hoy = datetime.datetime.now()
+        res.setFechaInicio(hoy.year, hoy.month, hoy.day, 0, 30)
+        res.setFechaFin(hoy.year, hoy.month, hoy.day + 4, 0, 30)
+        self.assertEqual(res.validateTimeInterval(), 1)
+    
+    def testValidInterval_1(self):
+        res = Reservacion()
+        hoy = datetime.datetime.now()
+        res.setFechaInicio(hoy.year, hoy.month, hoy.day, 0, 30)
+        res.setFechaFin(hoy.year, hoy.month, hoy.day, 0, 45)
+        self.assertEqual(res.validateTimeInterval(), 0)
+        
+    def testValidInterval_2(self):
+        res = Reservacion()
+        hoy = datetime.datetime.now()
+        res.setFechaInicio(hoy.year, hoy.month, hoy.day, 1, 0)
+        res.setFechaFin(hoy.year, hoy.month, hoy.day + 3, 0, 59)
+        self.assertEqual(res.validateTimeInterval(), 0)
 
 if __name__ == "__main__":
     #import sys;sys.argv = ['', 'Test.test']

@@ -13,7 +13,7 @@ if __name__ == '__main__':
     hour = input("Introduzca hora: ")
     minute = input("Introduzca minuto: ")
     
-    newReservation.setEntrada(year, month, day, hour, minute)
+    newReservation.setFechaInicio(year, month, day, hour, minute)
     
     print("FECHA SALIDA")
     year = input("Introduzca año: ")
@@ -22,9 +22,9 @@ if __name__ == '__main__':
     hour = input("Introduzca hora: ")
     minute = input("Introduzca minuto: ")
     
-    newReservation.setSalida(year, month, day, hour, minute)
+    newReservation.setFechaFin(year, month, day, hour, minute)
     
     horaDiurna = input("Escoja monto hora diurna: ")
     horaNocturna = input("Escoja monto hora nocturna: ")
     
-    nuevaTarifa = Tarifa(horaDiurna, horaNocturna, newReservation.entrada, newReservation.salida)
+    nuevaTarifa = Tarifa(horaDiurna, horaNocturna, newReservation.fechaInicio, newReservation.fechaFin)
