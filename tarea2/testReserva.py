@@ -1,12 +1,16 @@
+#
+# Autores: Christian Teixeira - 11-11016
+#          Carlos Martínez - 11-10584 
+#
 
 import unittest
 import datetime
-from reserva import reservacion
+import Reservacion
 
 class Test(unittest.TestCase):
 
     def testValidateShortInterval(self):
-        res = reservacion()
+        res = Reservacion()
         hoy = datetime.datetime.now()
         res.setFechaInicio(hoy.year, hoy.month, hoy.day, 0, 30)
         res.setFechaFin(hoy.year, hoy.month, hoy.day, 0, 44)
