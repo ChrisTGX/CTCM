@@ -1,3 +1,7 @@
+#
+# Autores: Christian Teixeira - 11-10584
+#          Carlos Martínez - 11-10584 
+#
 
 import datetime
 import decimal
